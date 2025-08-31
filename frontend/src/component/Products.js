@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Container, Grid, Card, CardMedia, CardContent, Typography } from '@mui/material';
 
+const products = [
+  { id: 1, name: 'دهان داخلي', price: 25, image: 'https://via.placeholder.com/300' },
+  { id: 2, name: 'دهان خارجي', price: 30, image: 'https://via.placeholder.com/300' },
+  { id: 3, name: 'دهان الهيبة', price: 35, image: 'https://via.placeholder.com/300' },
+];
+
 export default function Products() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/api/products').then((res) => setProducts(res.data));
-  }, []);
-
   return (
     <Container sx={{ mt: 4 }}>
       <Typography variant="h4" gutterBottom>
